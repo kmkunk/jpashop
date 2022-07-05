@@ -97,7 +97,7 @@ public class OrderApiController {
         public OrderDto(Order order) {
             orderId = order.getId();
             name = order.getMember().getName();
-            orderDate = order.getOrderDate();
+//            orderDate = order.getOrderDate();
             orderStatus = order.getStatus();
             address = order.getDelivery().getAddress();
             orderItems = order.getOrderItems().stream()

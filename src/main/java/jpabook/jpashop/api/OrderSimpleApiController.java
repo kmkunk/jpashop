@@ -68,14 +68,14 @@ public class OrderSimpleApiController {
     static class SimpleOrderDto {
         private Long orderId;
         private String name;
-        private LocalDateTime localDateTime;
+//        private LocalDateTime localDateTime;
         private OrderStatus orderStatus;
         private Address address;
 
         public SimpleOrderDto(Order order) {
             orderId = order.getId();
             name = order.getMember().getName();
-            localDateTime = order.getOrderDate();
+//            localDateTime = order.getOrderDate();
             orderStatus = order.getStatus();
             address = order.getMember().getAddress();
         }
