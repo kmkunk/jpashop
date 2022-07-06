@@ -1,9 +1,7 @@
 package jpabook.jpashop.domain;
 
 import lombok.Getter;
-import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -15,11 +13,11 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
 @Getter
-public abstract class BaseEntity extends BaseTimeEntity {
-    @CreatedBy
+public abstract class BaseTimeEntity {
+    @CreatedDate
     @Column(updatable = false)
-    private String createdBy;
+    private LocalDateTime createdDate;
 
-    @LastModifiedBy
-    private String lastModifiedBy;
+    @LastModifiedDate
+    private LocalDateTime lastModifiedDate;
 }
